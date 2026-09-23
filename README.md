@@ -8,7 +8,7 @@
 ![PySpark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white) 
 ![SQL](https://img.shields.io/badge/sql-%2300758f.svg?style=for-the-badge&logo=mysql&logoColor=white) 
 
-### 🚀 Aspiring Data Scientist & AI Engineer
+### 🚀 Aspiring Data Scientist & Data Engineer
 Focused on the intersection of **Scalable Distributed Systems**, **Machine Learning & Deep Learning**, and **Predictive Analytics**.
 
 ---
