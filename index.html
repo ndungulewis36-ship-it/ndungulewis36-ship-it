@@ -1,511 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lewis Ndungu | Telecommunications, Data Science & Data Engineering</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lewis Ndungu | Telecommunications, Data Science & Data Engineering</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg-color: #090d16;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-heading: #f9fafb;
+      --text-body: #9ca3af;
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --accent-cyan: #06b6d4;
+      --accent-purple: #a855f7;
+      --glow-color: rgba(168, 85, 247, 0.15);
+    }
 
-        :root {
-            --bg-color: #090d16;
-            --card-bg: rgba(17, 24, 39, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-heading: #f9fafb;
-            --text-body: #9ca3af;
-            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-            --accent-cyan: #06b6d4;
-            --accent-purple: #a855f7;
-            --glow-color: rgba(168, 85, 247, 0.15);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-body);
+      line-height: 1.7;
+      padding: 20px;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-body);
-            line-height: 1.7;
-            padding: 20px;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+    }
 
-        .container {
-            max-width: 950px;
-            margin: 40px auto;
-        }
+    /* Hero Header with Profile Image */
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      margin-bottom: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-        /* Hero Header with Profile Image */
-        header {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(16px);
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+    .profile-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid rgba(168, 85, 247, 0.5);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
 
-        .profile-avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid rgba(168, 85, 247, 0.5);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
-            object-fit: cover;
-            flex-shrink: 0;
-        }
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
 
-        .hero-content {
-            flex: 1;
-            min-width: 280px;
-        }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(6, 182, 212, 0.2);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22c55e;
+    }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22c55e;
-        }
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 8px;
-            letter-spacing: -1px;
-        }
+    .gradient-text {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .bio {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 680px;
+      font-weight: 400;
+    }
 
-        .bio {
-            font-size: 1.05rem;
-            color: var(--text-body);
-            max-width: 680px;
-            font-weight: 400;
-        }
+    /* Tech Badges */
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-        /* Tech Badges */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
+    .pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: var(--text-heading);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
 
-        .pill {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            color: var(--text-heading);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
+    .pill:hover {
+      border-color: var(--accent-purple);
+      transform: translateY(-2px);
+      background: rgba(168, 85, 247, 0.08);
+    }
 
-        .pill:hover {
-            border-color: var(--accent-purple);
-            transform: translateY(-2px);
-            background: rgba(168, 85, 247, 0.08);
-        }
+    /* Section Layout */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 35px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
 
-        /* Section Layout */
-        section {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 35px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
+    h2 {
+      color: var(--text-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        h2 {
-            color: var(--text-heading);
-            font-size: 1.45rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    h2 i {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        h2 i {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* Grids */
+    .tech-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        /* Grids */
-        .tech-grid, .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+    .tech-card, .project-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        .tech-card, .project-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .tech-card:hover, .project-card:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px var(--glow-color);
+    }
 
-        .tech-card:hover, .project-card:hover {
-            border-color: rgba(168, 85, 247, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px var(--glow-color);
-        }
+    .tech-card h3, .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .tech-card h3, .project-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .project-card h3 a {
+      color: var(--text-heading);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-        .project-card h3 a {
-            color: var(--text-heading);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+    .project-card h3 a:hover {
+      color: var(--accent-cyan);
+    }
 
-        .project-card h3 a:hover {
-            color: var(--accent-cyan);
-        }
+    .tech-card p, .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
 
-        .tech-card p, .project-card p {
-            font-size: 0.9rem;
-            color: var(--text-body);
-            margin-bottom: 16px;
-        }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
+    .mini-pill {
+      background: rgba(99, 102, 241, 0.1);
+      color: #a5b4fc;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
 
-        .mini-pill {
-            background: rgba(99, 102, 241, 0.1);
-            color: #a5b4fc;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
+    /* Timeline / Education */
+    .timeline-item {
+      border-left: 2px solid rgba(168, 85, 247, 0.3);
+      padding-left: 20px;
+      margin-bottom: 25px;
+      position: relative;
+    }
 
-        /* Timeline / Experience */
-        .timeline-item {
-            border-left: 2px solid rgba(168, 85, 247, 0.3);
-            padding-left: 20px;
-            margin-bottom: 25px;
-            position: relative;
-        }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-purple);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-purple);
+    }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-purple);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-purple);
-        }
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
 
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-heading);
-        }
+    .timeline-subtitle {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
 
-        .timeline-subtitle {
-            font-size: 0.9rem;
-            color: var(--accent-cyan);
-            margin-bottom: 8px;
-        }
+    .timeline-date {
+      font-size: 0.82rem;
+      color: var(--text-body);
+      float: right;
+    }
 
-        .timeline-date {
-            font-size: 0.82rem;
-            color: var(--text-body);
-            float: right;
-        }
+    .timeline-list {
+      list-style: square;
+      padding-left: 20px;
+      font-size: 0.9rem;
+    }
 
-        .timeline-list {
-            list-style: square;
-            padding-left: 20px;
-            font-size: 0.9rem;
-        }
+    .timeline-list li {
+      margin-bottom: 6px;
+    }
 
-        .timeline-list li {
-            margin-bottom: 6px;
-        }
+    /* Buttons & Actions */
+    .action-container {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
 
-        /* Buttons & Actions */
-        .action-container {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+    .btn-gradient {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+      border: none;
+    }
 
-        .btn-gradient {
-            background: var(--accent-gradient);
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
-            border: none;
-        }
+    .btn-gradient:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(168, 85, 247, 0.4);
+    }
 
-        .btn-gradient:hover {
-            opacity: 0.92;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(168, 85, 247, 0.4);
-        }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-heading);
+      border: 1px solid var(--card-border);
+    }
 
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text-heading);
-            border: 1px solid var(--card-border);
-        }
+    .btn-outline:hover {
+      border-color: var(--accent-purple);
+      background: rgba(168, 85, 247, 0.08);
+      transform: translateY(-2px);
+    }
 
-        .btn-outline:hover {
-            border-color: var(--accent-purple);
-            background: rgba(168, 85, 247, 0.08);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            color: var(--text-body);
-            font-size: 0.88rem;
-            margin-top: 40px;
-            padding-bottom: 20px;
-        }
-    </style>
+    footer {
+      text-align: center;
+      color: var(--text-body);
+      font-size: 0.88rem;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Hero Header -->
+    <header>
+      <img src="https://avatars.githubusercontent.com/u/173905898?v=4" alt="Lewis Ndungu" class="profile-avatar">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Nairobi, Kenya • Open to Roles & Projects
+        </div>
+        <h1>Lewis <span class="gradient-text">Ndungu</span></h1>
+        <p class="bio">Electrical & Telecommunication Engineering graduate transitioning into Data Science and Data Engineering. Skilled in configuring network equipment, system troubleshooting, and building scalable, data-driven solutions.</p>
+        <div class="badge-container">
+          <span class="pill"><i class="fa-solid fa-chart-line" style="color: #38bdf8;"></i> Data Science</span>
+          <span class="pill"><i class="fa-solid fa-server" style="color: #34d399;"></i> Data Engineering</span>
+          <span class="pill"><i class="fa-solid fa-network-wired" style="color: #c084fc;"></i> Telecommunications</span>
+          <span class="pill"><i class="fa-brands fa-linux" style="color: #facc15;"></i> Linux & DevOps</span>
+        </div>
+      </div>
+    </header>
 
-    <div class="container">
-        <!-- Hero Header -->
-        <header>
-            <img src="https://avatars.githubusercontent.com/u/173905898?v=4" alt="Lewis Ndungu" class="profile-avatar">
-            
-            <div class="hero-content">
-                <div class="status-badge">
-                    <span class="status-dot"></span> Nairobi, Kenya • Open to Roles & Projects
-                </div>
-                <h1>Lewis <span class="gradient-text">Ndungu</span></h1>
-                <p class="bio">Electrical & Telecommunication Engineering graduate transitioning into Data Science and Data Engineering. Skilled in configuring network equipment, system troubleshooting, and building scalable, data-driven solutions.</p>
-                
-                <div class="badge-container">
-                    <span class="pill"><i class="fa-solid fa-chart-line" style="color: #38bdf8;"></i> Data Science</span>
-                    <span class="pill"><i class="fa-solid fa-server" style="color: #34d399;"></i> Data Engineering</span>
-                    <span class="pill"><i class="fa-solid fa-network-wired" style="color: #c084fc;"></i> Telecommunications</span>
-                    <span class="pill"><i class="fa-brands fa-linux" style="color: #facc15;"></i> Linux & DevOps</span>
-                </div>
-            </div>
-        </header>
+    <!-- Technical Stack -->
+    <section>
+      <h2><i class="fa-solid fa-code"></i> Technical Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3><i class="fa-solid fa-brain" style="color: #60a5fa;"></i> Data Science</h3>
+          <p>Machine Learning (ML), Deep Learning (DL), Database Administration (DBA), and Data Analysis (DA) including statistical inference, predictive modeling, and exploratory analysis.</p>
+        </div>
+        <div class="tech-card">
+          <h3><i class="fa-solid fa-gears" style="color: #34d399;"></i> Data Engineering</h3>
+          <p>ETL Pipelines, PySpark, Schema Design, Data Processing, and Data Warehousing concepts.</p>
+        </div>
+        <div class="tech-card">
+          <h3><i class="fa-solid fa-network-wired" style="color: #c084fc;"></i> Networking & Telecommunications</h3>
+          <p>TCP/IP, Routing & Switching, Network Troubleshooting, Routers, Switches, Network Infrastructure, and Telecommunications Systems.</p>
+        </div>
+        <div class="tech-card">
+          <h3><i class="fa-brands fa-linux" style="color: #f472b6;"></i> DevOps & Environments</h3>
+          <p>Linux, DevOps Practices, Automation, Deployment Pipelines, System Integration, IT Infrastructure, and Technical Documentation.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Technical Stack -->
-        <section>
-            <h2><i class="fa-solid fa-code"></i> Technical Stack</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3><i class="fa-solid fa-brain" style="color: #60a5fa;"></i> Data Science</h3>
-                    <p>Machine Learning (ML), Deep Learning (DL), Database Administration (DBA), and Data Analysis (DA) including statistical inference, predictive modeling, and exploratory analysis.</p>
-                </div>
-                <div class="tech-card">
-                    <h3><i class="fa-solid fa-gears" style="color: #34d399;"></i> Data Engineering</h3>
-                    <p>ETL Pipelines, PySpark, Schema Design, Data Processing, and Data Warehousing concepts.</p>
-                </div>
-                <div class="tech-card">
-                    <h3><i class="fa-solid fa-network-wired" style="color: #c084fc;"></i> Networking & Telecommunications</h3>
-                    <p>TCP/IP, Routing & Switching, Network Troubleshooting, Routers, Switches, Network Infrastructure, and Telecommunications Systems.</p>
-                </div>
-                <div class="tech-card">
-                    <h3><i class="fa-brands fa-linux" style="color: #f472b6;"></i> DevOps & Environments</h3>
-                    <p>Linux, DevOps Practices, Automation, Deployment Pipelines, System Integration, IT Infrastructure, and Technical Documentation.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Featured Projects -->
+    <section>
+      <h2><i class="fa-solid fa-rocket"></i> Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <h3><i class="fa-solid fa-fire" style="color: #f87171;"></i> <a href="https://github.com/ndungulewis36-ship-it/Forest-Fires-Prevention" target="_blank">Forest Fires Prevention</a></h3>
+            <p>Analyzed environmental parameters and applied machine learning models to detect and predict forest-fire patterns.</p>
+          </div>
+          <div class="project-tags">
+            <span class="mini-pill">Python</span>
+            <span class="mini-pill">Pandas</span>
+            <span class="mini-pill">Machine Learning</span>
+            <span class="mini-pill">EDA</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div>
+            <h3><i class="fa-solid fa-map-location-dot" style="color: #38bdf8;"></i> <a href="https://github.com/mwaikelvin2k-creator/Reparian_enchroachment_Detector" target="_blank">Riparian Encroachment Detector</a></h3>
+            <p>Geospatial AI detector utilizing YOLOv8 deep learning segmentation and Sentinel-2 imagery to track river encroachments.</p>
+          </div>
+          <div class="project-tags">
+            <span class="mini-pill">YOLOv8</span>
+            <span class="mini-pill">Deep Learning</span>
+            <span class="mini-pill">GeoPandas</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div>
+            <h3><i class="fa-solid fa-chart-line" style="color: #c084fc;"></i> <a href="https://github.com/ndungulewis36-ship-it/Bitcoin-Price-Prediction" target="_blank">Bitcoin Price Prediction</a></h3>
+            <p>Time series modeling and predictive machine learning algorithms to analyze cryptocurrency market trends.</p>
+          </div>
+          <div class="project-tags">
+            <span class="mini-pill">Python</span>
+            <span class="mini-pill">Scikit-Learn</span>
+            <span class="mini-pill">Time Series</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div>
+            <h3><i class="fa-solid fa-plane-slash" style="color: #f472b6;"></i> <a href="https://github.com/ndungulewis36-ship-it/dsc-course0-m8-lab" target="_blank">Aviation Safety Analysis</a></h3>
+            <p>Empirical data science analysis evaluating historical aviation accident metrics across aircraft classifications.</p>
+          </div>
+          <div class="project-tags">
+            <span class="mini-pill">Statistics</span>
+            <span class="mini-pill">Seaborn</span>
+            <span class="mini-pill">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Professional Experience -->
-        <section>
-            <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-title">IT / Engineering Intern</div>
-                <div class="timeline-subtitle">Symphony Technology Limited <span class="timeline-date">Jan 2024 – May 2025</span></div>
-                <ul class="timeline-list">
-                    <li>Supported integration, configuration, and maintenance of telecommunications and IT network infrastructure (routers, switches).</li>
-                    <li>Executed network monitoring and diagnostic troubleshooting to improve system uptime and operational performance.</li>
-                    <li>Collaborated with senior engineers on DevOps automation and CI/CD deployment pipeline activities.</li>
-                    <li>Created and maintained comprehensive technical documentation for system configurations and procedures.</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Education -->
+    <section>
+      <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      <div class="timeline-item">
+        <div class="timeline-title">B.Sc. in Electrical & Telecommunication Engineering</div>
+        <div class="timeline-subtitle">Multimedia University of Kenya (MMU) <span class="timeline-date">2018 – 2023</span></div>
+      </div>
+      <div class="timeline-item" style="margin-bottom: 0;">
+        <div class="timeline-title">Data Science Program</div>
+        <div class="timeline-subtitle">Moringa School <span class="timeline-date">Completed (2026)</span></div>
+        <p style="font-size: 0.88rem; color: var(--text-body);">Curriculum: Python for Data Science, Data Analysis & Visualization, Statistical Inference, Machine Learning, Deep Learning, and Generative AI.</p>
+      </div>
+    </section>
 
-        <!-- Featured Projects -->
-        <section>
-            <h2><i class="fa-solid fa-rocket"></i> Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div>
-                        <h3><i class="fa-solid fa-fire" style="color: #f87171;"></i> <a href="https://github.com/ndungulewis36-ship-it/Forest-Fires-Prevention" target="_blank">Forest Fires Prevention</a></h3>
-                        <p>Analyzed environmental parameters and applied machine learning models to detect and predict forest-fire patterns.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-pill">Python</span>
-                        <span class="mini-pill">Pandas</span>
-                        <span class="mini-pill">Machine Learning</span>
-                        <span class="mini-pill">EDA</span>
-                    </div>
-                </div>
+    <!-- Contact Section -->
+    <section>
+      <h2><i class="fa-solid fa-paper-plane"></i> Connect With Me</h2>
+      <p style="margin-bottom: 20px;">Open to Data Science, Data Engineering, and Telecommunications opportunities.</p>
+      <div class="action-container">
+        <a href="mailto:ndungulewis36@gmail.com" class="btn btn-gradient">
+          <i class="fa-solid fa-envelope"></i> ndungulewis36@gmail.com
+        </a>
+        <a href="tel:+254745613775" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> +254 745 613 775
+        </a>
+        <a href="https://wa.me/254745613775" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/in/lewis-kamau-1265aa302" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/ndungulewis36-ship-it" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </section>
 
-                <div class="project-card">
-                    <div>
-                        <h3><i class="fa-solid fa-map-location-dot" style="color: #38bdf8;"></i> <a href="https://github.com/mwaikelvin2k-creator/Reparian_enchroachment_Detector" target="_blank">Riparian Encroachment Detector</a></h3>
-                        <p>Geospatial AI detector utilizing YOLOv8 deep learning segmentation and Sentinel-2 imagery to track river encroachments.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-pill">YOLOv8</span>
-                        <span class="mini-pill">Deep Learning</span>
-                        <span class="mini-pill">GeoPandas</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div>
-                        <h3><i class="fa-solid fa-chart-line" style="color: #c084fc;"></i> <a href="https://github.com/ndungulewis36-ship-it/Bitcoin-Price-Prediction" target="_blank">Bitcoin Price Prediction</a></h3>
-                        <p>Time series modeling and predictive machine learning algorithms to analyze cryptocurrency market trends.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-pill">Python</span>
-                        <span class="mini-pill">Scikit-Learn</span>
-                        <span class="mini-pill">Time Series</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div>
-                        <h3><i class="fa-solid fa-plane-slash" style="color: #f472b6;"></i> <a href="https://github.com/ndungulewis36-ship-it/dsc-course0-m8-lab" target="_blank">Aviation Safety Analysis</a></h3>
-                        <p>Empirical data science analysis evaluating historical aviation accident metrics across aircraft classifications.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-pill">Statistics</span>
-                        <span class="mini-pill">Seaborn</span>
-                        <span class="mini-pill">Data Analysis</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section>
-            <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-title">B.Sc. in Electrical & Telecommunication Engineering</div>
-                <div class="timeline-subtitle">Multimedia University of Kenya (MMU) <span class="timeline-date">2018 – 2023</span></div>
-            </div>
-
-            <div class="timeline-item" style="margin-bottom: 0;">
-                <div class="timeline-title">Data Science Program</div>
-                <div class="timeline-subtitle">Moringa School <span class="timeline-date">Completed (2026)</span></div>
-                <p style="font-size: 0.88rem; color: var(--text-body);">Curriculum: Python for Data Science, Data Analysis & Visualization, Statistical Inference, Machine Learning, Deep Learning, and Generative AI.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section>
-            <h2><i class="fa-solid fa-paper-plane"></i> Connect With Me</h2>
-            <p style="margin-bottom: 20px;">Open to Data Science, Data Engineering, and Telecommunications opportunities.</p>
-            <div class="action-container">
-                <a href="mailto:ndungulewis36@gmail.com" class="btn btn-gradient">
-                    <i class="fa-solid fa-envelope"></i> ndungulewis36@gmail.com
-                </a>
-                <a href="tel:+254745613775" class="btn btn-outline">
-                    <i class="fa-solid fa-phone"></i> +254 745 613 775
-                </a>
-                <a href="https://wa.me/254745613775" target="_blank" class="btn btn-outline">
-                    <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp
-                </a>
-                <a href="https://www.linkedin.com/in/lewis-kamau-1265aa302" target="_blank" class="btn btn-outline">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/ndungulewis36-ship-it" target="_blank" class="btn btn-outline">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Lewis Ndungu. Built with HTML, CSS, and GitHub Pages.</p>
-        </footer>
-    </div>
-
+    <footer>
+      <p>© 2026 Lewis Ndungu. Built with HTML, CSS, and GitHub Pages.</p>
+    </footer>
+  </div>
 </body>
 </html>
 
